@@ -1,0 +1,42 @@
+[	
+	{
+		"id_graphic" : "graphic001",
+		"sensor" : "Sensor1",
+		"machine" : "Maquina1",
+		"magnitude" : "Pressure",
+		"max" : 3,
+		"min" : 0.1,
+		"lastTime": 10,
+		"deltaTime" : 5
+	},
+	{
+		"id_graphic" : "graphic002",
+		"sensor" : "Sensor2",
+		"machine" : "Maquina1",
+		"magnitude" : "Temperature",
+		"max" : 100,
+		"min" : 30,
+		"lastTime": 60,
+		"deltaTime" : 10
+	},
+	{
+		"id_graphic" : "graphic003",
+		"sensor" : "Sensor3",
+		"machine" : "Maquina1",
+		"magnitude" : "Altitude",
+		"max" : 5000,
+		"min" : 200,
+		"lastTime": 120,
+		"deltaTime" : 1
+	},
+	{
+		"id_graphic" : "graphic004",
+		"sensor" : "Sensor4",
+		"machine" : "Maquina1",
+		"magnitude" : "Speed",
+		"max" : 80,
+		"min" : 20,
+		"lastTime": 3600,
+		"deltaTime" : 60
+	}
+]
