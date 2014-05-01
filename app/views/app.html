@@ -1,9 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Amtrep</title>
-</head>
-<body>
-	Hola mundo!!
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/xcharts.min.css">
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>Amtrep</h1>
+	</header>
+	<section class="content">
+		<article class="machine">
+			<h2 class="machine-title">Maquina 1</h2>
+			<section class="machine-graphics">
+
+				<article class="graphic">
+					<div class="graphic-area">
+						<h3>Presión (DPM)</h3>
+						<div id="planoPressures" class="plano"></div>
+					</div>
+				</article>
+			
+				<article class="graphic">
+					<div class="graphic-area">
+						<h3>Temperatura (DPM)</h3>
+						<div id="planoTemperatures" class="plano"></div>
+					</div>
+				</article>
+			
+				<article class="graphic">
+					<div class="graphic-area">
+						<h3>Altitud (DPM)</h3>
+						<div id="planoPressures" class="plano"></div>
+					</div>
+				</article>
+			
+				<article class="graphic">
+					<div class="graphic-area">
+						<h3>Velocidad (DPM)</h3>
+						<div id="planoPressures" class="plano"></div>
+					</div>
+				</article>
+
+			</section>
+		</article>
+	</section>
+	<footer></footer>
+{% endblock %}
+
+{% block footer %}
+	<script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/vendor/xcharts.js"></script>
+	<script type="text/javascript" src="js/vendor/d3.min.js"></script>
+	<script type="text/javascript" src="js/vendor/moment.min.js"></script>
+	<script type="text/javascript" src="js/vendor/canvasjs.min.js"></script>
+	<script type="text/javascript" src="js/pressure.js"></script>
+	<script type="text/javascript" src="js/temperature.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+{% endblock %}

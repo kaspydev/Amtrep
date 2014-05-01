@@ -11,7 +11,7 @@ var temperatureController = function (server, time) {
 		var timeLast = moment().subtract('seconds', lastTime)
 		var query = Measure.where('id_graphic').equals('graphic002').where('date').gt(timeLast).select('value date').exec(function (err, measures) {
 			temperatures = measures
-			console.log('load temperatures', temperatures)
+			//console.log('load temperatures', temperatures)
 		})
 	}
 
@@ -20,8 +20,16 @@ var temperatureController = function (server, time) {
 	})
 
 	server.get('/allTemperaturesTo', function (req, res) {
-		var value = { time: '2014-04-28 06:30:00' }
-		var index = _.sortedIndex(temperatures, value, 'time')
+		var time = new Date(req.query.date)
+		var index = _.sortedIndex(temperatures, {value: 0, date: time}, 'date')
+
+		if(index > 0 && index < temperatures.length){
+			var mom = moment(temperatures[index].date)
+			if(mom.isSame(time)){
+				index++
+			}
+		}
+
 		res.send(temperatures.slice(index, temperatures.length))
 	})
 

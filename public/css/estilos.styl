@@ -1,0 +1,43 @@
+@import "style.css"
+
+blanco = #fff
+gris = #3f4e62
+verde = #16a085
+azul = #418bca
+rojo = #d9544f
+transparente_claro = rgba(gris, 0.2)
+transparente_oscuro = rgba(gris, 0.5)
+
+header
+	h1
+		text-align center
+		margin 0
+		color rojo
+
+.content
+	.machine
+		margin .5em
+		.machine-title
+			margin 0
+			font-weight normal
+			background gris
+			padding .5em
+			color blanco
+		.machine-graphics
+			//background rojo
+			overflow hidden
+			.graphic
+				margin 1em
+				.graphic-area
+					h3
+						text-align center
+						margin 0
+						background verde
+					.plano
+						height 300px
+						width 100%
+
+@media screen and (min-width: 1000px)
+	.graphic
+		display inline-block
+		width 45%
