@@ -38,4 +38,6 @@ server.get('/', function (req, res) {
 	res.render('app')
 })
 
-server.listen(3000);
+//server.listen(3000);
+var port = Number(process.env.PORT || 5000);
+server.listen(port)
