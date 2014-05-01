@@ -1,41 +1,44 @@
-var temperatureController = function () {
-  	var temperatures = [];
+var altitudeController = function () {
+  	var altitudes = [];
 
-	var chart = new CanvasJS.Chart("planoTemperatures",{
+	var chart = new CanvasJS.Chart("planoAltitudes",{
 		axisX:{
 			valueFormatString: "h:mm:ss"
 		},
 		data: [{
 			type: "line",
 			xValueType: "dateTime",
-			dataPoints: temperatures 
+			dataPoints: altitudes 
 		}]
 	});
-  
-	$.get( "/allTemperatures", function( data ) {
+  	
+  	//console.log('/allAltitudes')
+	$.get( "/allAltitudes", function( data ) {
 		//console.log(data)
 		for(var i=0; i<data.length; ++i){
 			var time = moment(data[i].date)
 			var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())
-			temperatures.push({x: date, y: data[i].value})
+			altitudes.push({x: date, y: data[i].value})
 		}
+
+		//console.log('altitudes', altitudes)
 
 		chart.render()
 
 		setInterval(function () {
-			$.get( "/allTemperaturesTo", {date: temperatures[temperatures.length-1].x}, function( data ) {
+			$.get( "/allAltitudesTo", {date: altitudes[altitudes.length-1].x}, function( data ) {
 				for(var i=0; i<data.length; ++i){
 					var time = moment(data[i].date)
 					var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())
-					temperatures.push({x: date, y: data[i].value})
+					altitudes.push({x: date, y: data[i].value})
 					
-					if(temperatures.length > 60){
-						temperatures.shift()  
+					if(altitudes.length > 60){
+						altitudes.shift()  
 					}
 				}
 
 				chart.render()
 			});
-		}, 1000)
+		}, 500)
 	});
 }

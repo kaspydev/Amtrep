@@ -1,36 +1,36 @@
-var temperatureController = function () {
-  	var temperatures = [];
+var speedController = function () {
+  	var speeds = [];
 
-	var chart = new CanvasJS.Chart("planoTemperatures",{
+	var chart = new CanvasJS.Chart("planoSpeeds",{
 		axisX:{
 			valueFormatString: "h:mm:ss"
 		},
 		data: [{
 			type: "line",
 			xValueType: "dateTime",
-			dataPoints: temperatures 
+			dataPoints: speeds 
 		}]
 	});
   
-	$.get( "/allTemperatures", function( data ) {
+	$.get( "/allSpeeds", function( data ) {
 		//console.log(data)
 		for(var i=0; i<data.length; ++i){
 			var time = moment(data[i].date)
 			var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())
-			temperatures.push({x: date, y: data[i].value})
+			speeds.push({x: date, y: data[i].value})
 		}
 
 		chart.render()
 
 		setInterval(function () {
-			$.get( "/allTemperaturesTo", {date: temperatures[temperatures.length-1].x}, function( data ) {
+			$.get( "/allSpeedsTo", {date: speeds[speeds.length-1].x}, function( data ) {
 				for(var i=0; i<data.length; ++i){
 					var time = moment(data[i].date)
 					var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())
-					temperatures.push({x: date, y: data[i].value})
+					speeds.push({x: date, y: data[i].value})
 					
-					if(temperatures.length > 60){
-						temperatures.shift()  
+					if(speeds.length > 60){
+						speeds.shift()  
 					}
 				}
 

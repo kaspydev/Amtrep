@@ -30,7 +30,7 @@ var measureController = function (server, addNewPressure, addNewTemperature, add
 		var measure = 	new Measure({
 			id_graphic : 'graphic003',
 			value : value,
-			date : moment().format("YYYY-MM-DD hh:mm:ss")
+			date : moment().format()
 		})
 		measure.save(function (err) {
 			addNewAltitude(measure.date, value)
@@ -41,7 +41,7 @@ var measureController = function (server, addNewPressure, addNewTemperature, add
 		var measure = 	new Measure({
 			id_graphic : 'graphic004',
 			value : value,
-			date : moment().format("YYYY-MM-DD hh:mm:ss")
+			date : moment().format()
 		})
 		measure.save(function (err) {
 			addNewSpeed(measure.date, value)
