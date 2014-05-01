@@ -8,6 +8,7 @@ var pressureController = function () {
 		data: [{
 			type: "line",
 			xValueType: "dateTime",
+			color: "#16a085",
 			dataPoints: pressures 
 		}]
 	});

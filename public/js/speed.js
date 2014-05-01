@@ -8,6 +8,7 @@ var speedController = function () {
 		data: [{
 			type: "line",
 			xValueType: "dateTime",
+			color: "#d9544f",
 			dataPoints: speeds 
 		}]
 	});

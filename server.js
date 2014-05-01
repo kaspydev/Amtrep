@@ -41,13 +41,13 @@ setInterval(function () {
 
 var valAltitude = 20
 setInterval(function () {
-	valAltitude =valAltitude + (Math.random() + Math.random()*-1)*3
+	valAltitude = valAltitude + (Math.random() + Math.random()*-1)*3
 	measureController.newAltitude(valAltitude)
 }, 3000)
 
 var valSpeed = 50
 setInterval(function () {
-	valSpeed =valSpeed + (Math.random() + Math.random()*-1)*50
+	valSpeed = valSpeed + (Math.random() + Math.random()*-1)*50
 	measureController.newSpeed(valSpeed)
 }, 2000)
 

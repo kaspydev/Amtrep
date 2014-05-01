@@ -8,6 +8,7 @@ var temperatureController = function () {
 		data: [{
 			type: "line",
 			xValueType: "dateTime",
+			color: "rgb(255, 193, 0)",
 			dataPoints: temperatures 
 		}]
 	});
