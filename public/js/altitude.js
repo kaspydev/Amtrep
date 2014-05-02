@@ -1,4 +1,5 @@
 var altitudeController = function () {
+
   	var altitudes = [];
 
 	var chart = new CanvasJS.Chart("planoAltitudes",{
@@ -12,16 +13,12 @@ var altitudeController = function () {
 		}]
 	});
   	
-  	//console.log('/allAltitudes')
 	$.get( "/allAltitudes", function( data ) {
-		//console.log(data)
 		for(var i=0; i<data.length; ++i){
 			var time = moment(data[i].date)
 			var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())
 			altitudes.push({x: date, y: data[i].value})
 		}
-
-		//console.log('altitudes', altitudes)
 
 		chart.render()
 
@@ -39,6 +36,6 @@ var altitudeController = function () {
 
 				chart.render()
 			});
-		}, 500)
+		}, 1000)
 	});
 }

@@ -1,4 +1,5 @@
 var temperatureController = function () {
+  	
   	var temperatures = [];
 
 	var chart = new CanvasJS.Chart("planoTemperatures",{
@@ -14,7 +15,6 @@ var temperatureController = function () {
 	});
   
 	$.get( "/allTemperatures", function( data ) {
-		//console.log(data)
 		for(var i=0; i<data.length; ++i){
 			var time = moment(data[i].date)
 			var date = new Date(time.year(), time.month(), time.date(), time.hour(), time.minute(), time.second())

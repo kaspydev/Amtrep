@@ -1,9 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<link rel="stylesheet" type="text/css" href="css/xcharts.min.css">
 {% endblock %}
 
 {% block content %}
@@ -12,33 +10,33 @@
 	</header>
 	<section class="content">
 		<article class="machine">
-			<h2 class="machine-title">Maquina 1</h2>
+			<h2 class="machine-title">Motoniveladora 16M B9H - CAT</h2>
 			<section class="machine-graphics">
 
 				<article class="graphic">
 					<div class="graphic-area">
-						<h3 class="presion-title">Presión (Pa)</h3>
+						<h3 class="presion-title">Presión (bar)</h3>
 						<div id="planoPressures" class="plano"></div>
 					</div>
 				</article>
 			
 				<article class="graphic">
 					<div class="graphic-area">
-						<h3 class="temperatura-title">Temperatura (C)</h3>
+						<h3 class="temperatura-title">Temperatura (°F)</h3>
 						<div id="planoTemperatures" class="plano"></div>
 					</div>
 				</article>
 			
 				<article class="graphic">
 					<div class="graphic-area">
-						<h3 class="altitud-title">Altitud (Pie)</h3>
+						<h3 class="altitud-title">Altitud (msnm)</h3>
 						<div id="planoAltitudes" class="plano"></div>
 					</div>
 				</article>
 				
 				<article class="graphic">
 					<div class="graphic-area">
-						<h3 class="velocidad-title">Velocidad (Km/s)</h3>
+						<h3 class="velocidad-title">Velocidad (km/h)</h3>
 						<div id="planoSpeeds" class="plano"></div>
 					</div>
 				</article>
@@ -49,10 +47,8 @@
 	<footer></footer>
 {% endblock %}
 
-{% block footer %}
+{% block libraries %}
 	<script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="js/vendor/xcharts.js"></script>
-	<script type="text/javascript" src="js/vendor/d3.min.js"></script>
 	<script type="text/javascript" src="js/vendor/moment.min.js"></script>
 	<script type="text/javascript" src="js/vendor/canvasjs.min.js"></script>
 	<script type="text/javascript" src="js/pressure.js"></script>

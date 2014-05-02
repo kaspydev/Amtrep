@@ -1,4 +1,5 @@
 var pressureController = function () {
+
   	var pressures = [];
 
 	var chart = new CanvasJS.Chart("planoPressures",{
@@ -36,6 +37,6 @@ var pressureController = function () {
 
 				chart.render()
 			});
-		}, 500)
+		}, 1000)
 	});
 }

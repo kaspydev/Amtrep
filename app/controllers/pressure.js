@@ -11,7 +11,6 @@ var pressureController = function (server, time) {
 		var timeLast = moment().subtract('seconds', lastTime)
 		var query = Measure.where('id_graphic').equals('graphic001').where('date').gt(timeLast).select('value date').exec(function (err, measures) {
 			pressures = measures
-			//console.log('load pressures', pressures)
 		})
 	}
 
@@ -21,25 +20,21 @@ var pressureController = function (server, time) {
 
 	server.get('/allPressuresTo', function (req, res) {
 		var time = new Date(req.query.date)
-		//console.log(time)
-		var index = _.sortedIndex(pressures, {value: 0, date: time}, 'date')
-		//console.log(pressures[index].date)
+		var index = _.sortedIndex(pressures, {date: time}, 'date')
 		if(index > 0 && index < pressures.length){
 			var mom = moment(pressures[index].date)
 			if(mom.isSame(time)){
-				//console.log('entre mierda!!')
 				index++
 			}
 		}
-
 		res.send(pressures.slice(index, pressures.length))
 	})
-
+	/*
 	server.post('/newLastTime', function (req, res) {
 		var time = 5400
 		lastTime = time
 		pressures = calculateLastPressures(lastTime)
-	})
+	})*/
 
 	var addNewPressure = function (time, value) {
 		pressures.push({ value: value, date: time })

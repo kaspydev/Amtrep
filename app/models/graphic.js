@@ -6,6 +6,7 @@ var graphicSchema = Schema({
 	sensor : String,
 	machine : String,
 	magnitude : String,
+	unit: String,
 	max : Number,
 	min : Number,
 	lastTime : Number,

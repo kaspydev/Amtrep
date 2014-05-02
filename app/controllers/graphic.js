@@ -1,6 +1,5 @@
 var graphicController = function (server) {
 	
-	// APIs for the Graphics
 	server.post('/newPressure', function (req, res) {
 		var measure = 	new Measure({
 			graphic : req.body.graphic,
