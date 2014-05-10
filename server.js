@@ -28,5 +28,5 @@ server.get('/', function (req, res) {
 	res.render('app')
 })
 
-var port = Number(process.env.PORT || 5000)
+var port = Number(process.env.PORT || 80)
 server.listen(port)
