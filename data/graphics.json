@@ -1,46 +1,46 @@
 [	
-	{
-		"id_graphic" : "graphic001",
-		"sensor" : "Sensor1",
-		"machine" : "Maquina1",
-		"magnitude" : "Pressure",
-		"unit": "bar",
-		"max" : 20,
-		"min" : 0,
-		"lastTime": 60,
-		"deltaTime" : 1
-	},
-	{
-		"id_graphic" : "graphic002",
-		"sensor" : "Sensor2",
-		"machine" : "Maquina1",
-		"magnitude" : "Temperature",
-		"unit": "°F",
-		"max" : 300,
-		"min" : 50,
-		"lastTime": 300,
-		"deltaTime" : 1
-	},
-	{
-		"id_graphic" : "graphic003",
-		"sensor" : "Sensor3",
-		"machine" : "Maquina1",
-		"magnitude" : "Altitude",
-		"unit": "msnm",
-		"max" : 50,
-		"min" : 0,
-		"lastTime": 180,
-		"deltaTime" : 1
-	},
-	{
-		"id_graphic" : "graphic004",
-		"sensor" : "Sensor4",
-		"machine" : "Maquina1",
-		"magnitude" : "Speed",
-		"unit": "km/h",
-		"max" : 200,
-		"min" : -100,
-		"lastTime": 120,
-		"deltaTime" : 1
-	}
+    {
+	"id_graphic" : "graphic001",
+	"sensor" : "Sensor1",
+	"machine" : "Maquina1",
+	"magnitude" : "Pressure",
+	"unit": "bar",
+	"max" : 5,
+	"min" : 0,
+	"lastTime": 60,
+	"deltaTime" : 1
+    },
+    {
+	"id_graphic" : "graphic002",
+	"sensor" : "Sensor2",
+	"machine" : "Maquina1",
+	"magnitude" : "Temperature",
+	"unit": "°F",
+	"max" : 300,
+	"min" : 50,
+	"lastTime": 300,
+	"deltaTime" : 1
+    },
+    {
+	"id_graphic" : "graphic003",
+	"sensor" : "Sensor3",
+	"machine" : "Maquina1",
+	"magnitude" : "Altitude",
+	"unit": "msnm",
+	"max" : 50,
+	"min" : 0,
+	"lastTime": 180,
+	"deltaTime" : 1
+    },
+    {
+	"id_graphic" : "graphic004",
+	"sensor" : "Sensor4",
+	"machine" : "Maquina1",
+	"magnitude" : "Speed",
+	"unit": "km/h",
+	"max" : 20,
+	"min" : 0,
+	"lastTime": 120,
+	"deltaTime" : 1
+    }
 ]
